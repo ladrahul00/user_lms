@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package go.micro.service.user;
+
+service Source {
+	rpc GetBySourceTag(SourceRequest) returns (SourceResponse) {}
+}
+
+message SourceRequest {
+	string sourceTag = 1;
+}
+
+message SourceResponse {
+	string sourceTag = 1;
+	bool systemSource = 2;
+}

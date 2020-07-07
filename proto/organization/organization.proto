@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package go.micro.service.user;
+
+service Organization {
+	rpc Create(NewOrganizationRequest) returns (Response) {}
+	rpc GetByID(OrganizationByIdRequest) returns (OrganizationDetails) {}
+	rpc Update(UpdateOrganizationRequest) returns (Response) {}
+}
+
+message NewOrganizationRequest {
+	string name = 1;
+	string email = 3;
+	string contact = 4;
+    string sourceTag = 5;
+    string logoLink = 6;
+}
+
+message Response {
+	string message = 2;
+	bool status = 3;
+}
+
+message OrganizationByIdRequest {
+	string organizationId = 1;
+}
+
+message OrganizationDetails {
+	string id = 1;
+	string name = 2;
+	string email = 3;
+	string contact = 4;
+	string logoLink = 5;
+	string sourceTag = 6;
+	repeated string allowedSources = 7;
+}
+
+message UpdateOrganizationRequest {
+	string id = 1;
+	string name = 2;
+	string contact = 3;
+	string logoLink = 4;
+	repeated string allowedSources = 5;
+}

@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package go.micro.service.user;
+
+service User {
+	rpc Create(NewUserRequest) returns (Response) {}
+	rpc GetByID(UserByIdRequest) returns (UserDetails) {}
+	rpc GetByEmail(UserByEmailRequest) returns (UserDetails) {}
+	rpc Update(UpdateUserRequest) returns (Response) {}
+}
+
+message NewUserRequest {
+	string firstName = 1;
+	string lastName = 2;
+	string email = 3;
+	string contact = 4;
+	string organizationName = 6;
+}
+
+message Response {
+	string message = 1;
+	bool status = 2;
+}
+
+message UserByIdRequest {
+	string userId = 1;
+}
+
+message UserByEmailRequest {
+	string email = 1;
+}
+
+message UserDetails {
+	string id = 1;
+	string firstName = 2;
+	string lastName = 3;
+	string email = 4;
+	string contact = 5;
+	string organizationId = 6;
+}
+
+message UpdateUserRequest {
+	string id = 1;
+	string firstName = 2;
+	string lastName = 3;
+	bool active = 4;
+	string contact = 5;
+}
