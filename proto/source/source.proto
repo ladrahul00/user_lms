@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package go.micro.service.user;
 
+option go_package = "proto/source;user_lms0";
+
 service Source {
 	rpc GetBySourceTag(SourceRequest) returns (SourceResponse) {}
 }

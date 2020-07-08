@@ -13,7 +13,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 
 	"github.com/wolf00/user_lms/db"
-	"github.com/wolf00/user_lms/models"
+	"github.com/wolf00/user_lms/db/models"
 	organization "github.com/wolf00/user_lms/proto/organization"
 )
 

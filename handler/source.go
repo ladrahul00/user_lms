@@ -4,7 +4,7 @@ import (
 	"context"
 
 	source "github.com/wolf00/user_lms/proto/source"
-	"github.com/wolf00/user_lms/user/services"
+	"github.com/wolf00/user_lms/services"
 )
 
 // SourceServiceHandler blah
