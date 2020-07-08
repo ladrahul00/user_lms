@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/micro/go-micro/v2/util/log"
-	"github.com/wolf00/golang_lms/user/db"
-	"github.com/wolf00/golang_lms/user/db/models"
-	source "github.com/wolf00/golang_lms/user/proto/source"
+	"github.com/wolf00/user_lms/db"
+	"github.com/wolf00/user_lms/db/models"
+	source "github.com/wolf00/user_lms/proto/source"
 	"go.mongodb.org/mongo-driver/bson"
 )
 

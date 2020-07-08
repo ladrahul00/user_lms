@@ -6,15 +6,15 @@ import (
 	"time"
 
 	log "github.com/micro/go-micro/v2/logger"
-	"github.com/wolf00/golang_lms/user/constants"
-	"github.com/wolf00/golang_lms/user/utilities"
+	"github.com/wolf00/user_lms/constants"
+	"github.com/wolf00/user_lms/utilities"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 
-	"github.com/wolf00/golang_lms/user/db"
-	"github.com/wolf00/golang_lms/user/db/models"
-	organization "github.com/wolf00/golang_lms/user/proto/organization"
+	"github.com/wolf00/user_lms/db"
+	"github.com/wolf00/user_lms/models"
+	organization "github.com/wolf00/user_lms/proto/organization"
 )
 
 // OrganizationService blah

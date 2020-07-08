@@ -3,11 +3,11 @@ package main
 import (
 	"github.com/micro/go-micro/v2"
 	log "github.com/micro/go-micro/v2/logger"
-	"github.com/wolf00/golang_lms/user/handler"
+	"github.com/wolf00/user_lms/handler"
 
-	organization "github.com/wolf00/golang_lms/user/proto/organization"
-	source "github.com/wolf00/golang_lms/user/proto/source"
-	user "github.com/wolf00/golang_lms/user/proto/user"
+	organization "github.com/wolf00/user_lms/proto/organization"
+	source "github.com/wolf00/user_lms/proto/source"
+	user "github.com/wolf00/user_lms/proto/user"
 )
 
 func main() {

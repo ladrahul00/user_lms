@@ -3,8 +3,8 @@ package handler
 import (
 	"context"
 
-	organization "github.com/wolf00/golang_lms/user/proto/organization"
-	"github.com/wolf00/golang_lms/user/services"
+	organization "github.com/wolf00/user_lms/proto/organization"
+	"github.com/wolf00/user_lms/services"
 )
 
 // OrganizationServiceHandler blah

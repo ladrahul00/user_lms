@@ -3,8 +3,8 @@ package handler
 import (
 	"context"
 
-	user "github.com/wolf00/golang_lms/user/proto/user"
-	"github.com/wolf00/golang_lms/user/services"
+	user "github.com/wolf00/user_lms/proto/user"
+	"github.com/wolf00/user_lms/services"
 )
 
 // UserServiceHandler blah
