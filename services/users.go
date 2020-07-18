@@ -40,6 +40,7 @@ func (u *UserService) Create(ctx context.Context, req *user.NewUserRequest, rsp 
 		FirstName:      req.FirstName,
 		LastName:       req.LastName,
 		OrganizationID: organization.ID,
+		Password:       req.Password,
 	}
 	_, err = createUser(ctx, newUser)
 	if err != nil {
@@ -93,6 +94,9 @@ func (u *UserService) Update(ctx context.Context, req *user.UpdateUserRequest, r
 	if utilities.ValidateString(req.Contact) {
 		existingUser.Contact = req.Contact
 	}
+	if utilities.ValidateString(req.Password) {
+		existingUser.Password = req.Password
+	}
 	existingUser.Active = req.Active
 	updateData := bson.D{
 		{"$set", bson.D{
@@ -100,6 +104,7 @@ func (u *UserService) Update(ctx context.Context, req *user.UpdateUserRequest, r
 			{"lastName", existingUser.LastName},
 			{"contact", existingUser.Contact},
 			{"active", existingUser.Active},
+			{"password", existingUser.Password},
 		}},
 	}
 	_, err = updateUser(ctx, existingUser.ID, updateData)
@@ -120,6 +125,7 @@ func (u *UserService) userToUserDetail(dbUser models.Users, userDetails *user.Us
 	userDetails.LastName = dbUser.LastName
 	userDetails.OrganizationId = dbUser.OrganizationID.Hex()
 	userDetails.Id = dbUser.ID.Hex()
+	userDetails.Password = dbUser.Password
 }
 
 func (u *UserService) failure(message string, rsp *user.Response) error {

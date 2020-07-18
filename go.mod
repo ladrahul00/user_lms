@@ -8,6 +8,8 @@ require (
 	github.com/google/go-cmp v0.5.0 // indirect
 	github.com/micro/go-micro v1.18.0 // indirect
 	github.com/micro/go-micro/v2 v2.9.1
+	github.com/micro/go-plugins/registry/consul v0.0.0-20200119172437-4fe21aa238fd
+	github.com/micro/go-plugins/registry/consul/v2 v2.9.1
 	github.com/micro/micro/v2 v2.9.3 // indirect
 	github.com/micro/protoc-gen-micro/v2 v2.3.0 // indirect
 	go.mongodb.org/mongo-driver v1.3.2

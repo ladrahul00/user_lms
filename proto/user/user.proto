@@ -17,6 +17,7 @@ message NewUserRequest {
 	string email = 3;
 	string contact = 4;
 	string organizationName = 6;
+	string password = 7;
 }
 
 message Response {
@@ -39,12 +40,14 @@ message UserDetails {
 	string email = 4;
 	string contact = 5;
 	string organizationId = 6;
+	string password = 7;
 }
 
 message UpdateUserRequest {
 	string id = 1;
 	string firstName = 2;
 	string lastName = 3;
+	string password = 7;
 	bool active = 4;
 	string contact = 5;
 }

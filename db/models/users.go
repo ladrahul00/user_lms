@@ -16,4 +16,5 @@ type Users struct {
 	CreatedOn      time.Time          `bson:"createdOn,omitempty"`
 	Active         bool               `bson:"active,omitempty"`
 	OrganizationID primitive.ObjectID `bson:"organizationId,omitempty"`
+	Password       string             `bson:"password,omitempty"`
 }
