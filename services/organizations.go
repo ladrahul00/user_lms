@@ -35,7 +35,7 @@ func (o *OrganizationService) Create(ctx context.Context, req *organization.NewO
 	newOrganization.SourceTag = req.SourceTag
 	newOrganization.Contact = req.Contact
 	newOrganization.LogoLink = req.LogoLink
-	err := createOrganization(ctx, newOrganization)
+	err := createOrganization(ctx, newOrganization, req.Password)
 	if err != nil {
 		return err
 	}
@@ -148,7 +148,7 @@ func (o *OrganizationService) organizationValidationErrors(req *organization.New
 	return validationErrors
 }
 
-func createOrganization(ctx context.Context, newOrganization models.Organizations) error {
+func createOrganization(ctx context.Context, newOrganization models.Organizations, userPassword string) error {
 	newOrganization.CreatedOn = time.Now()
 	newOrganization.Active = true
 	newOrganization.AllowedSources = []primitive.ObjectID{}
@@ -186,6 +186,7 @@ func createOrganization(ctx context.Context, newOrganization models.Organization
 			Active:         true,
 			CreatedOn:      time.Now(),
 			OrganizationID: organizationID.InsertedID.(primitive.ObjectID),
+			Password:       userPassword,
 		}
 		_, err = userCollection.InsertOne(sessionContext, newUser)
 		if err != nil {

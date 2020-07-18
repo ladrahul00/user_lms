@@ -16,6 +16,7 @@ message NewOrganizationRequest {
 	string contact = 4;
     string sourceTag = 5;
     string logoLink = 6;
+	string password = 7;
 }
 
 message Response {
