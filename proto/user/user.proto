@@ -2,13 +2,13 @@ syntax = "proto3";
 
 package go.micro.service.user;
 
-option go_package = "proto/user;user_lms0";
+option go_package = "proto/user;user_lms";
 
 service User {
-	rpc Create(NewUserRequest) returns (Response) {}
+	rpc Create(NewUserRequest) returns (UserResponse) {}
 	rpc GetByID(UserByIdRequest) returns (UserDetails) {}
 	rpc GetByEmail(UserByEmailRequest) returns (UserDetails) {}
-	rpc Update(UpdateUserRequest) returns (Response) {}
+	rpc Update(UpdateUserRequest) returns (UserResponse) {}
 }
 
 message NewUserRequest {
@@ -20,7 +20,7 @@ message NewUserRequest {
 	string password = 7;
 }
 
-message Response {
+message UserResponse {
 	string message = 1;
 	bool status = 2;
 }

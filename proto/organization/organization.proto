@@ -2,12 +2,12 @@ syntax = "proto3";
 
 package go.micro.service.user;
 
-option go_package = "proto/organization;user_lms0";
+option go_package = "proto/organization;organization_lms";
 
 service Organization {
-	rpc Create(NewOrganizationRequest) returns (Response) {}
+	rpc Create(NewOrganizationRequest) returns (OrganizationResponse) {}
 	rpc GetByID(OrganizationByIdRequest) returns (OrganizationDetails) {}
-	rpc Update(UpdateOrganizationRequest) returns (Response) {}
+	rpc Update(UpdateOrganizationRequest) returns (OrganizationResponse) {}
 }
 
 message NewOrganizationRequest {
@@ -19,7 +19,7 @@ message NewOrganizationRequest {
 	string password = 7;
 }
 
-message Response {
+message OrganizationResponse {
 	string message = 2;
 	bool status = 3;
 }

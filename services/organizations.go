@@ -22,7 +22,7 @@ type OrganizationService struct {
 }
 
 // Create blah
-func (o *OrganizationService) Create(ctx context.Context, req *organization.NewOrganizationRequest, rsp *organization.Response) error {
+func (o *OrganizationService) Create(ctx context.Context, req *organization.NewOrganizationRequest, rsp *organization.OrganizationResponse) error {
 	validationErrors := o.organizationValidationErrors(req)
 	if len(validationErrors) > 0 {
 		rsp.Message = strings.Join(validationErrors, ", ")
@@ -77,7 +77,7 @@ func (o *OrganizationService) GetByID(ctx context.Context, req *organization.Org
 }
 
 // Update blah
-func (o *OrganizationService) Update(ctx context.Context, req *organization.UpdateOrganizationRequest, rsp *organization.Response) error {
+func (o *OrganizationService) Update(ctx context.Context, req *organization.UpdateOrganizationRequest, rsp *organization.OrganizationResponse) error {
 	existingOrganization, err := organizationByID(ctx, req.Id)
 	if err != nil {
 		log.Error(err)

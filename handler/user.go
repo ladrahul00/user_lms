@@ -13,7 +13,7 @@ type UserServiceHandler struct {
 }
 
 // Create is a single request handler called via client.Call or the generated client code
-func (e *UserServiceHandler) Create(ctx context.Context, req *user.NewUserRequest, rsp *user.Response) error {
+func (e *UserServiceHandler) Create(ctx context.Context, req *user.NewUserRequest, rsp *user.UserResponse) error {
 	return e.UserService.Create(ctx, req, rsp)
 }
 
@@ -28,6 +28,6 @@ func (e *UserServiceHandler) GetByEmail(ctx context.Context, req *user.UserByEma
 }
 
 // Update is a single request handler called via client.Call or the generated client code
-func (e *UserServiceHandler) Update(ctx context.Context, req *user.UpdateUserRequest, rsp *user.Response) error {
+func (e *UserServiceHandler) Update(ctx context.Context, req *user.UpdateUserRequest, rsp *user.UserResponse) error {
 	return e.UserService.Update(ctx, req, rsp)
 }

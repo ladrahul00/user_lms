@@ -23,7 +23,7 @@ type UserService struct {
 }
 
 // Create a new user
-func (u *UserService) Create(ctx context.Context, req *user.NewUserRequest, rsp *user.Response) error {
+func (u *UserService) Create(ctx context.Context, req *user.NewUserRequest, rsp *user.UserResponse) error {
 	validationErrors := u.userValidationErrors(req)
 	if len(validationErrors) > 0 {
 		return u.failure(strings.Join(validationErrors, ", "), rsp)
@@ -80,7 +80,7 @@ func (u *UserService) GetByEmail(ctx context.Context, req *user.UserByEmailReque
 }
 
 // Update a user
-func (u *UserService) Update(ctx context.Context, req *user.UpdateUserRequest, rsp *user.Response) error {
+func (u *UserService) Update(ctx context.Context, req *user.UpdateUserRequest, rsp *user.UserResponse) error {
 	existingUser, err := userByID(ctx, req.Id)
 	if err != nil {
 		return err
@@ -128,7 +128,7 @@ func (u *UserService) userToUserDetail(dbUser models.Users, userDetails *user.Us
 	userDetails.Password = dbUser.Password
 }
 
-func (u *UserService) failure(message string, rsp *user.Response) error {
+func (u *UserService) failure(message string, rsp *user.UserResponse) error {
 	rsp.Message = message
 	rsp.Status = false
 	return nil

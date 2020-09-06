@@ -13,7 +13,7 @@ type OrganizationServiceHandler struct {
 }
 
 // Create is a single request handler called via client.Call or the generated client code
-func (e *OrganizationServiceHandler) Create(ctx context.Context, req *organization.NewOrganizationRequest, rsp *organization.Response) error {
+func (e *OrganizationServiceHandler) Create(ctx context.Context, req *organization.NewOrganizationRequest, rsp *organization.OrganizationResponse) error {
 	return e.OrganizationService.Create(ctx, req, rsp)
 }
 
@@ -23,6 +23,6 @@ func (e *OrganizationServiceHandler) GetByID(ctx context.Context, req *organizat
 }
 
 // Update is a single request handler called via client.Call or the generated client code
-func (e *OrganizationServiceHandler) Update(ctx context.Context, req *organization.UpdateOrganizationRequest, rsp *organization.Response) error {
+func (e *OrganizationServiceHandler) Update(ctx context.Context, req *organization.UpdateOrganizationRequest, rsp *organization.OrganizationResponse) error {
 	return e.OrganizationService.Update(ctx, req, rsp)
 }
